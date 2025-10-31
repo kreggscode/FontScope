@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "FontScope",
+  "version": "1.0",
+  "description": "Identify fonts on any web page with a stunning visual interface. Hover over text to reveal font details.",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "FontScope - Font Identifier"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
