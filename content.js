@@ -3,6 +3,20 @@
 
 let tooltip = null;
 let currentElement = null;
+let fontScopeEnabled = true; // Default to enabled
+
+// Listen for messages from popup
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  if (request.action === 'toggleFontScope') {
+    fontScopeEnabled = request.enabled;
+    console.log('FontScope:', fontScopeEnabled ? 'enabled' : 'disabled');
+
+    // Hide tooltip if disabled
+    if (!fontScopeEnabled) {
+      hideTooltip();
+    }
+  }
+});
 
 function createTooltip() {
   tooltip = document.createElement('div');
@@ -206,26 +220,9 @@ function init() {
   document.addEventListener('mousemove', handleMouseMove);
 }
 
-let tooltip = null;
-let currentElement = null;
-let fontScopeEnabled = true; // Default to enabled
-
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 } else {
   init();
 }
-
-// Listen for messages from popup
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  if (request.action === 'toggleFontScope') {
-    fontScopeEnabled = request.enabled;
-    console.log('FontScope:', fontScopeEnabled ? 'enabled' : 'disabled');
-
-    // Hide tooltip if disabled
-    if (!fontScopeEnabled) {
-      hideTooltip();
-    }
-  }
-});
