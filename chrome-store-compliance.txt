@@ -11,8 +11,19 @@ The "storage" permission is used solely to save the user's preference for enabli
 ### Tabs Permission (1000 characters max):
 The "tabs" permission is used to detect when users switch between browser tabs. This ensures that the font detection toggle state remains synchronized across all tabs. When a user changes the toggle setting in the popup, it automatically applies to all open tabs. Without this permission, the toggle would only work on the currently active tab.
 
-### Host Permission Justification (1000 characters max):
-The "<all_urls>" host permission is required because FontScope's content script needs to run on any website where users want to identify fonts. The extension injects a content script that only reads CSS font properties (font-family, font-size, font-weight, color) of hovered elements using getComputedStyle(). No data is transmitted, stored externally, or shared. The permission is necessary for the core functionality but is limited to read-only CSS property access.
+### Host Permission Justification (Updated for Chrome Warning):
+FontScope requires broad host permissions ("<all_urls>") because it is a font identification tool that must work on ANY website users visit. Unlike extensions that only work on specific sites, FontScope needs to:
+
+1. Run content scripts on all web pages to detect hover events
+2. Read CSS font properties from any website's elements
+3. Provide font identification across the entire web
+
+The activeTab permission suggested by Chrome would not work because:
+- activeTab only activates when users click the extension icon
+- FontScope needs to work passively when hovering over text
+- Users expect font identification to work on any page without clicking
+
+This is a legitimate use case for broad permissions. The extension only reads CSS properties locally and displays them in tooltips - no data is transmitted or stored externally. The broad permission is necessary for the core functionality but limited to read-only CSS property access.
 
 ## Remote Code Usage:
 No, I am not using Remote code.
