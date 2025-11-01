@@ -1,0 +1,97 @@
+# FontScope - Chrome Web Store Description
+
+## Description (Paste this into the description field):
+
+🎨 **FontScope** - The Ultimate Font Identifier for Designers & Developers
+
+Tired of guessing fonts on websites? FontScope makes font identification effortless and beautiful!
+
+**✨ Key Features:**
+• **Instant Detection**: Hover over any text to reveal complete font information
+• **Smart Positioning**: Tooltips appear above/below text for perfect visibility
+• **Complete Details**: See font family, size, weight, and color
+• **Premium Design**: Glassmorphic tooltips with stunning gradients
+• **Privacy First**: No data collection - works entirely offline
+• **Lightning Fast**: Zero performance impact on web pages
+
+**🎯 Perfect For:**
+• Web Designers analyzing competitor sites
+• Developers debugging typography issues
+• Typography enthusiasts exploring fonts
+• Content creators matching website styles
+• Students learning about web typography
+
+**🚀 How It Works:**
+1. Install FontScope
+2. Visit any website
+3. Hover over text elements
+4. View beautiful tooltips with font details
+
+**💎 Premium Experience:**
+FontScope features a modern, polished interface with smooth animations and professional-grade design. Unlike basic font detectors, FontScope provides a delightful user experience that makes font hunting enjoyable.
+
+**🔒 Privacy & Security:**
+• No data transmission
+• No tracking or analytics
+• Works entirely locally
+• Open source and transparent
+
+**🌟 Why Choose FontScope?**
+• Beautiful, modern interface
+• Accurate font detection
+• Smart tooltip positioning
+• Cross-browser compatibility
+• Regular updates and improvements
+
+Transform font identification from a chore into a delightful experience! Download FontScope today and discover the typography behind your favorite websites.
+
+---
+
+## Store Listing Details:
+
+**Category**: Productivity
+**Language**: English (en)
+
+**URLs**:
+- **Homepage URL**: https://kreggscode.github.io/FontScope/
+- **Support URL**: https://github.com/kreggscode/FontScope/issues
+
+**Mature Content**: No
+
+**Item Support**: On
+
+---
+
+## Required Graphic Assets:
+
+### 1. Store Icon (128x128 pixels)
+- Use the icon128.png from your icons/ folder
+- Must follow Chrome Web Store guidelines
+- Square format, high quality PNG
+
+### 2. Screenshots (1280x800 or 640x400) - At least 1 required
+Create screenshots showing:
+- Extension popup
+- Tooltip on a real website
+- Font details being displayed
+- Different positioning examples
+
+### 3. Small Promo Tile (440x280)
+- Feature the FontScope logo and tagline
+- Include visual elements of font detection
+
+### 4. Marquee Promo Tile (1400x560)
+- Hero image showcasing the extension in action
+- Professional design with gradient backgrounds
+
+---
+
+## Tips for Chrome Web Store Listing:
+
+1. **Screenshots**: Take high-quality screenshots of the extension in action on real websites
+2. **Icon**: Ensure the 128x128 icon is crisp and professional
+3. **Description**: Focus on benefits, not just features
+4. **Category**: "Productivity" is most appropriate for developer tools
+5. **Keywords**: Include terms like "font", "typography", "web design", "CSS", "developer tools"
+
+The description above is optimized for SEO and user engagement while staying within the 16,000 character limit.
