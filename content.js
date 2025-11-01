@@ -153,6 +153,9 @@ function hideTooltip() {
 }
 
 function handleMouseOver(event) {
+  // Don't show tooltips if disabled
+  if (!fontScopeEnabled) return;
+
   const element = event.target;
 
   // Handle text nodes - get their parent element
@@ -188,6 +191,9 @@ function handleMouseOut(event) {
 }
 
 function handleMouseMove(event) {
+  // Don't update tooltips if disabled
+  if (!fontScopeEnabled) return;
+
   if (currentElement && tooltip.style.display === 'block') {
     updateTooltip(currentElement);
   }
@@ -200,9 +206,26 @@ function init() {
   document.addEventListener('mousemove', handleMouseMove);
 }
 
+let tooltip = null;
+let currentElement = null;
+let fontScopeEnabled = true; // Default to enabled
+
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 } else {
   init();
 }
+
+// Listen for messages from popup
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  if (request.action === 'toggleFontScope') {
+    fontScopeEnabled = request.enabled;
+    console.log('FontScope:', fontScopeEnabled ? 'enabled' : 'disabled');
+
+    // Hide tooltip if disabled
+    if (!fontScopeEnabled) {
+      hideTooltip();
+    }
+  }
+});
