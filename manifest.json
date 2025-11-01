@@ -3,7 +3,7 @@
   "name": "FontScope",
   "version": "1.0",
   "description": "Identify fonts on any web page with a stunning visual interface. Hover over text to reveal font details.",
-  "permissions": ["storage"],
+  "permissions": ["storage", "tabs"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],

@@ -1,9 +1,11 @@
 // FontScope Content Script
 // Identifies fonts on web pages and displays them in a stunning tooltip
 
-let tooltip = null;
-let currentElement = null;
-let fontScopeEnabled = true; // Default to enabled
+// Request current state from storage when content script loads
+chrome.storage.sync.get(['fontscopeEnabled'], function(result) {
+  fontScopeEnabled = result.fontscopeEnabled !== false; // Default to true
+  console.log('FontScope: Initialized with state:', fontScopeEnabled);
+});
 
 // Listen for messages from popup
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {

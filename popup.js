@@ -4,12 +4,12 @@
 document.addEventListener('DOMContentLoaded', function() {
   const toggle = document.getElementById('fontscope-toggle');
 
-  // Load saved state
+  // Load saved state and sync with content script
   chrome.storage.sync.get(['fontscopeEnabled'], function(result) {
     const isEnabled = result.fontscopeEnabled !== false; // Default to true
     toggle.checked = isEnabled;
 
-    // Send initial state to active tab
+    // Always send current state to active tab when popup opens
     sendStateToActiveTab(isEnabled);
   });
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('FontScope state saved:', isEnabled);
     });
 
-    // Send state to active tab
+    // Send state to active tab immediately
     sendStateToActiveTab(isEnabled);
 
     // Show feedback
@@ -48,12 +48,15 @@ function showFeedback(message) {
   console.log('FontScope:', message);
 }
 
-// Listen for state requests from content script
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  if (request.action === 'getFontScopeState') {
-    chrome.storage.sync.get(['fontscopeEnabled'], function(result) {
-      sendResponse({ enabled: result.fontscopeEnabled !== false });
+// Listen for tab activation to sync state with new active tab
+chrome.tabs.onActivated.addListener(function(activeInfo) {
+  chrome.storage.sync.get(['fontscopeEnabled'], function(result) {
+    const isEnabled = result.fontscopeEnabled !== false;
+    chrome.tabs.sendMessage(activeInfo.tabId, {
+      action: 'toggleFontScope',
+      enabled: isEnabled
+    }).catch(function(error) {
+      // Tab might not be ready yet, that's okay
     });
-    return true; // Keep message channel open for async response
-  }
+  });
 });
