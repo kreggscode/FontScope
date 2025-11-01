@@ -1,0 +1,44 @@
+# FontScope - Chrome Web Store Compliance Form
+
+## Single Purpose Description (1000 characters max):
+FontScope is a font identification tool that allows users to hover over text on any web page to instantly view font details including family name, size, weight, and color. It provides a clean, professional interface for designers and developers to analyze typography without leaving their workflow.
+
+## Permission Justifications:
+
+### Storage Permission (1000 characters max):
+The "storage" permission is used solely to save the user's preference for enabling or disabling the font detection feature. This allows users to turn the extension on/off and have their preference persist across browser sessions and page reloads. No user data, browsing history, or personal information is stored - only a simple boolean flag indicating whether font detection is enabled.
+
+### Tabs Permission (1000 characters max):
+The "tabs" permission is used to detect when users switch between browser tabs. This ensures that the font detection toggle state remains synchronized across all tabs. When a user changes the toggle setting in the popup, it automatically applies to all open tabs. Without this permission, the toggle would only work on the currently active tab.
+
+### Host Permission Justification (1000 characters max):
+The "<all_urls>" host permission is required because FontScope's content script needs to run on any website where users want to identify fonts. The extension injects a content script that only reads CSS font properties (font-family, font-size, font-weight, color) of hovered elements using getComputedStyle(). No data is transmitted, stored externally, or shared. The permission is necessary for the core functionality but is limited to read-only CSS property access.
+
+## Remote Code Usage:
+No, I am not using Remote code.
+
+Justification: All JavaScript and CSS code is included in the extension package. No external scripts, modules, or eval() are used.
+
+## Data Usage Disclosures:
+
+### What user data do you plan to collect from users now or in the future?
+FontScope does NOT collect, store, or transmit any user data. The extension only reads CSS font properties locally within the browser and displays them in tooltips. No personally identifiable information, browsing history, user activity, or website content is collected or shared.
+
+### Certifications (Check all three):
+✅ I do not sell or transfer user data to third parties, outside of the approved use cases
+✅ I do not use or transfer user data for purposes that are unrelated to my item's single purpose
+✅ I do not use or transfer user data to determine creditworthiness or for lending purposes
+
+## Privacy Policy URL:
+https://kreggscode.github.io/FontScope/privacy.html
+
+---
+
+## Summary:
+- **Purpose**: Font identification tool for designers/developers
+- **Data Collection**: None - only reads local CSS properties
+- **Permissions**: Justified for toggle persistence and cross-tab sync
+- **Privacy**: No data collection, full compliance with policies
+- **Privacy Policy**: Hosted on GitHub Pages
+
+The extension fully complies with Chrome Web Store policies and has a comprehensive privacy policy.
