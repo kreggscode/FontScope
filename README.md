@@ -8,7 +8,7 @@
 
 **Discover fonts on any web page with stunning precision and elegance**
 
-[🚀 Install from Chrome Web Store](#) | [🌐 Live Demo](https://kreggscode.github.io/FontScope/) | [📖 Documentation](#features)
+[🚀 Install from Chrome Web Store](https://chromewebstore.google.com/detail/fontscope/plfjilblodndpfjnnlmfolfmnmhkhblg?authuser=0&hl=en) | [🌐 Live Demo](https://kreggscode.github.io/FontScope/) | [📖 Documentation](#features)
 
 ![FontScope Preview](https://via.placeholder.com/800x400/6366F1/FFFFFF?text=FontScope+Preview)
 
@@ -36,7 +36,7 @@
 ### Installation
 
 1. **From Chrome Web Store** (Recommended)
-   - Visit [Chrome Web Store](#)
+   - Visit [Chrome Web Store](https://chromewebstore.google.com/detail/fontscope/plfjilblodndpfjnnlmfolfmnmhkhblg?authuser=0&hl=en)
    - Click "Add to Chrome"
    - Pin the extension for easy access
 
